@@ -1,0 +1,23 @@
+﻿<Window x:Class="mark1.Janela1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mark1"
+        mc:Ignorable="d"
+        Title="Janela1" Height="450" Width="800">
+    <Grid RenderTransformOrigin="0.501,0.483">
+        <ListView SelectedItem="{Binding PessoaSelecionada}" ItemsSource="{Binding lista_pessoas}" HorizontalAlignment="Left" Height="414" Margin="447,0,0,0" VerticalAlignment="Center" Width="343" d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding ="{Binding Nome}"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Command="{Binding adiciona}" Content="Inserir" HorizontalAlignment="Left" Height="41" Margin="52,275,0,0" VerticalAlignment="Top" Width="121"/>
+        <Button Command="{Binding remover}" Content="Remover" HorizontalAlignment="Left" Height="41" Margin="280,275,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox Text="{Binding nome_digitado}" HorizontalAlignment="Left" Height="31" Margin="52,143,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="348"/>
+        <Label Content="Insira um texto:" HorizontalAlignment="Left" Height="29" Margin="52,76,0,0" VerticalAlignment="Top" Width="311"/>
+    </Grid>
+</Window>
